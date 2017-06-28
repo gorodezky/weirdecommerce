@@ -1,10 +1,18 @@
 source 'https://rubygems.org'
 
-
+#Heroku should use this version of RUBY
+ruby '2.2.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#for dev and test
+gem 'sqlite3', group: [:development, :test]
+#Postgress for production db
+gem 'pg', group: :production
+
+#12 factor for heroku
+gem 'rails_12factor', group: :production
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
